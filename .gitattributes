@@ -1,0 +1,7 @@
+* text=auto
+* whitespace=-blank-at-eof
+*.docx binary
+*.pdf binary
+*.png binary
+*.xlsx binary
+*.zip binary

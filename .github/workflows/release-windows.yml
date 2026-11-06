@@ -1,0 +1,48 @@
+name: Signed Windows release
+on:
+  workflow_dispatch:
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: dtolnay/rust-toolchain@stable
+      - run: python -m pip install -e "apps/api[test,ocr]" pyinstaller cyclonedx-bom
+      - run: cargo install cargo-cyclonedx --locked
+      - run: npm ci
+        working-directory: apps/web
+      - run: npm ci
+        working-directory: apps/desktop
+      - name: Import code-signing certificate
+        shell: pwsh
+        env:
+          WINDOWS_CERTIFICATE_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
+          WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+        run: |
+          $bytes = [Convert]::FromBase64String($env:WINDOWS_CERTIFICATE_BASE64)
+          $path = Join-Path $env:RUNNER_TEMP "publisher.pfx"
+          [IO.File]::WriteAllBytes($path, $bytes)
+          $cert = Import-PfxCertificate -FilePath $path -CertStoreLocation Cert:\CurrentUser\My `
+            -Password (ConvertTo-SecureString $env:WINDOWS_CERTIFICATE_PASSWORD -AsPlainText -Force)
+          "SIGNING_CERT_THUMBPRINT=$($cert.Thumbprint)" >> $env:GITHUB_ENV
+      - name: Build, inventory, sign and enforce release gate
+        shell: pwsh
+        env:
+          PUBLISHER_NAME: ${{ vars.PUBLISHER_NAME }}
+          SUPPORT_EMAIL: ${{ vars.SUPPORT_EMAIL }}
+        run: .\scripts\build-desktop.ps1 -CommercialRelease
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LaborCaseAgent-Windows-signed
+          path: |
+            dist/LaborCaseAgent.exe
+            dist/desktop-build-manifest.json
+            dist/sbom/**

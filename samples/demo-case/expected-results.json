@@ -1,0 +1,25 @@
+{
+  "fixture": "wholly_fictional_test_data",
+  "worker": "测试用户甲",
+  "company": "北京某某文化传媒有限公司（虚构）",
+  "salary_agreement": "6000.00",
+  "employment_start_precision": "month",
+  "employment_start": "2024-07",
+  "social_insurance_start": "2025-06",
+  "social_insurance_stop": "2026-06",
+  "february_2026_expected": "6000.00",
+  "february_2026_paid": "1000.00",
+  "february_2026_arrears": "5000.00",
+  "third_party_payment": true,
+  "must_remain_unconfirmed": [
+    "双方必然构成劳动关系",
+    "公司在2026年6月违法解除",
+    "无备注转账必然属于工资"
+  ],
+  "required_export_members": [
+    "README-案件说明.md",
+    "extracted/confirmed-facts.json",
+    "extracted/timeline.json",
+    "audit/export-manifest.json"
+  ]
+}

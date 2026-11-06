@@ -1,0 +1,13 @@
+{
+  "name": "labor-case-agent-desktop",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "tauri": "tauri",
+    "check": "powershell -NoProfile -ExecutionPolicy Bypass -File ../../scripts/check-desktop.ps1",
+    "build:nsis": "tauri build --bundles nsis"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.4"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "retrieved_at": "2026-07-22T11:10:00+08:00",
+  "notice": "仅保存官方来源元数据；引用前仍需人工复核现行版本。案件事实与本目录分开索引。",
+  "records": [
+    {
+      "title": "中华人民共和国劳动合同法",
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "document_number": "中华人民共和国主席令第七十三号（2012年修改决定）",
+      "effective_date": "2013-07-01",
+      "status": "effective",
+      "jurisdiction": "CN-national",
+      "source_url": "https://flk.npc.gov.cn/detail?fileId=&id=2c909fdd678bf17901678bf74d7106b3&title=%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%8A%B3%E5%8A%A8%E5%90%88%E5%90%8C%E6%B3%95&type=",
+      "retrieved_at": "2026-07-22T11:10:00+08:00",
+      "content_hash": "sha256:2d57bb9b53bc988676edc3fb18ae4b01dcaac405eef612b722eaf65802ee59e8",
+      "hash_scope": "retrieved HTML response",
+      "articles": [],
+      "verification": "国家法律法规数据库页面标记有效；正文条款尚未导入"
+    },
+    {
+      "title": "中华人民共和国劳动争议调解仲裁法",
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "document_number": "中华人民共和国主席令第八十号",
+      "effective_date": "2008-05-01",
+      "status": "effective",
+      "jurisdiction": "CN-national",
+      "source_url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/201912/t20191219_1307906.html",
+      "retrieved_at": "2026-07-22T11:10:00+08:00",
+      "content_hash": "sha256:3ba68c1119c806b4a645d56f7d5c93d5b0011bb4fb8cc956039d25eeea9ad716",
+      "hash_scope": "retrieved HTML response",
+      "articles": [],
+      "verification": "北京市政府门户转载全国人大常委会文本；正文条款尚未导入"
+    },
+    {
+      "title": "中华人民共和国个人信息保护法",
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "document_number": "中华人民共和国主席令第九十一号",
+      "effective_date": "2021-11-01",
+      "status": "effective",
+      "jurisdiction": "CN-national",
+      "source_url": "https://www.samr.gov.cn/wljys/gzzd/art/2023/art_3ef1e889c1e644d4b65b5f5c7f432386.html",
+      "retrieved_at": "2026-07-22T11:10:00+08:00",
+      "content_hash": "sha256:dcc3c5db9e08eddffcf248fb12a939a6005c0c6686b0138b8b2248016e17cac2",
+      "hash_scope": "retrieved HTML response",
+      "articles": [],
+      "verification": "国家市场监管总局转载国家法律法规数据库文本；正文条款尚未导入"
+    },
+    {
+      "title": "最高人民法院关于审理劳动争议案件适用法律问题的解释（一）",
+      "issuing_authority": "最高人民法院",
+      "document_number": "法释〔2020〕26号",
+      "effective_date": "2021-01-01",
+      "status": "effective_with_later_partial_change_possible",
+      "jurisdiction": "CN-national",
+      "source_url": "https://www.court.gov.cn/fabu/xiangqing/282121.html",
+      "retrieved_at": "2026-07-22T11:10:00+08:00",
+      "content_hash": "sha256:509492403560da7a6a8386c664cd876886046d22cb96590847b7f82d9095c8a1",
+      "hash_scope": "retrieved HTML response",
+      "articles": [],
+      "verification": "最高人民法院官方发布；2025年解释（二）可能废止个别条款，引用前必须逐条核验"
+    }
+  ]
+}
+

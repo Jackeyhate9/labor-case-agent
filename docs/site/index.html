@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>劳动争议案件工作台 · 欠薪与劳动仲裁 AI 证据整理 | Labor Case Agent</title>
+<meta name="description" content="开源、本地优先的劳动争议案件工作台：整理欠薪、劳动仲裁中的聊天截图、录音、工资流水，生成人工复核的证据清单、时间线与文书草稿。支持 OCR、语音转写与本地模型。">
+<meta name="keywords" content="欠薪,劳动仲裁,劳动争议,AI证据整理,工资计算,证据清单,OCR,本地AI,labor-case-agent">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jackeyhate9.github.io/labor-case-agent/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="劳动争议案件工作台 · Labor Case Agent">
+<meta property="og:description" content="把劳动争议材料整理成可复核的证据链。开源、本地优先，支持欠薪明细、时间线和仲裁文书草稿。">
+<meta property="og:url" content="https://jackeyhate9.github.io/labor-case-agent/">
+<meta property="og:image" content="https://jackeyhate9.github.io/labor-case-agent/images/v02-evidence-locator.png">
+<style>
+:root{font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;color:#122337;background:#f4f6f4;line-height:1.8;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}main,header,footer{width:min(1120px,calc(100% - 40px));margin:auto}
+header{padding:24px 0;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ccd4d1}nav{display:flex;gap:24px;flex-wrap:wrap}
+a{color:#1f6557;text-underline-offset:5px}a:hover{color:#122337}a:focus-visible{outline:3px solid #a13e37;outline-offset:5px}
+h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.25;letter-spacing:-.025em;max-width:17ch;margin:36px 0 24px;text-wrap:balance}
+h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.4;margin:0 0 20px}p{max-width:72ch;margin:12px 0 24px}
+.intro{padding:36px 0 48px}.lead{font-size:1.2rem;max-width:48ch}.actions{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin:30px 0}
+.primary{background:#1f6557;color:#fff;padding:12px 24px;text-decoration:none;border-radius:6px}.primary:hover{background:#132b43;color:#fff}
+figure{margin:0}img{display:block;width:100%;height:auto;border:1px solid #ccd4d1}figcaption{font-size:.9rem;margin-top:12px;color:#495a63}
+section{padding:48px 0;border-top:1px solid #ccd4d1}.columns{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+li{margin-bottom:12px}ul,ol{padding-left:24px}code{font-size:.95em;overflow-wrap:anywhere}footer{padding:28px 0 48px;color:#495a63;font-size:.9rem}
+::selection{background:#cce5dc;color:#122337}@media(max-width:650px){header{flex-direction:column}.columns{grid-template-columns:1fr;gap:28px}.intro{padding-top:12px}section{padding:32px 0}nav{gap:18px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"劳动争议案件工作台 / Labor Case Agent","description":"本地优先的欠薪、劳动仲裁与劳动争议 AI 证据整理工具。","codeRepository":"https://github.com/Jackeyhate9/labor-case-agent","license":"https://opensource.org/license/mit","programmingLanguage":["Python","TypeScript","Rust"],"author":{"@type":"Person","name":"Jackeyhate9","url":"https://github.com/Jackeyhate9"}}</script>
+</head>
+<body>
+<header><strong>劳动争议案件工作台</strong><nav aria-label="主导航"><a href="#start">本地运行</a><a href="#contact">联系作者</a><a href="https://github.com/Jackeyhate9/labor-case-agent">GitHub 源码</a></nav></header>
+<main>
+<div class="intro">
+<h1>把零散材料，整理成可复核的证据链。</h1>
+<p class="lead">为欠薪与劳动仲裁整理聊天截图、录音和工资流水。劳动争议案件工作台保留材料出处，辅助生成时间线、欠薪明细、证据清单与文书草稿。</p>
+<div class="actions"><a class="primary" href="https://github.com/Jackeyhate9/labor-case-agent#readme">查看源码与安装说明</a><a href="#start">开始本地部署</a></div>
+<figure><img src="images/v02-evidence-locator.png" alt="劳动争议案件工作台的证据定位界面，展示原始材料与提取内容" width="1440" height="900"><figcaption>v0.2 工作台界面。原始材料 → 机器提取 → 用户确认 → 文书，重要内容由使用者复核。</figcaption></figure>
+</div>
+<section class="columns" aria-label="功能与边界">
+<div><h2>围绕材料，而非空泛回答</h2><ul><li>OCR 提取聊天截图与 PDF，保留来源及定位信息。</li><li>录音转写与说话人片段，辅助还原事件时间线。</li><li>确定性金额计算、证据图谱与审查意见。</li><li>导出 DOCX／XLSX 草稿及包含哈希清单的案件档案。</li></ul></div>
+<div><h2>让材料留在你的设备上</h2><p>核心建案、计算、文书与导出采用本地优先架构。可选 OCR、语音和向量模型需要另行安装；云模型由你自主配置。</p><p>这是材料整理和文书草拟工具，不提供正式法律意见。机器提取与模型建议需人工核对；连接云 API 前请确认资料授权与隐私要求。</p></div>
+</section>
+<section id="start"><h2>从本地运行开始</h2><p>准备 Python 3.11+ 与 Node.js 22+，克隆源码后按照部署文档安装后端和前端。无需为基础功能配置云模型密钥。</p><ol><li>克隆 <code>https://github.com/Jackeyhate9/labor-case-agent.git</code>。</li><li>参照本地部署文档安装依赖并初始化数据库。</li><li>启动 Python API 与 Next.js 前端，访问 <code>http://localhost:3000</code>。</li></ol><p><a href="https://github.com/Jackeyhate9/labor-case-agent/blob/main/docs/local-deployment.md">打开完整部署文档</a> · <a href="https://github.com/Jackeyhate9/labor-case-agent/blob/main/docs/known-limitations.md">查看已知限制</a></p><p>本网站为静态项目介绍页。案件工作台在本地运行；本站不提供案件上传入口。Windows 安装器请以仓库实际发布产物为准。</p></section>
+<section id="contact"><h2>交流与反馈</h2><p>发现问题、希望改进流程，欢迎通过 GitHub 提交反馈。请使用脱敏示例，勿在公开讨论区提交真实案件原件、身份证号、手机号或 API 密钥。</p><p><a href="https://github.com/Jackeyhate9/labor-case-agent/issues">提交问题或建议</a> · <a href="https://github.com/Jackeyhate9">作者主页</a></p></section>
+<section id="sponsor"><h2>支持项目继续维护</h2><p>如果这个工具帮到了你，欢迎自愿赞助。赞助不影响开源使用，也不代表法律服务或案件结果承诺。</p><a href="images/sponsor-wechat.png" aria-label="打开微信赞助码原图"><img src="images/sponsor-wechat.png" alt="作者提供的微信支付赞助码，请在付款前确认收款人" style="width:min(320px,100%);height:auto"></a><p>微信扫码自愿赞助，付款前请核对收款人。点击图片可查看原图。</p></section>
+</main><footer>Labor Case Agent · MIT 开源许可。第三方依赖与可选模型遵循各自许可证。</footer>
+</body></html>

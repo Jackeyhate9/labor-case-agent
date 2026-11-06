@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jackeyhate9.github.io/labor-case-agent/sitemap.xml

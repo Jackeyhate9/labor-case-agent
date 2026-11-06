@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>劳动争议案件工作台</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Labor Case Agent · v0.2 desktop</p>
+        <h1>本地服务控制台</h1>
+        <p class="lede">桌面壳、案件 API 与完整 Next.js 工作台均在本机运行。服务健康后将自动进入工作台。</p>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div>
+          <span id="status-dot" class="dot pending"></span>
+          <strong id="status-title">正在启动本地 API…</strong>
+          <p id="status-detail">首次启动可能需要数秒解压 sidecar。</p>
+        </div>
+        <button id="retry" type="button">重新检查</button>
+      </section>
+
+      <section class="grid">
+        <article>
+          <h2>数据位置</h2>
+          <code id="data-dir">%LOCALAPPDATA%\LaborCaseAgent\data</code>
+          <p>卸载应用不会自动删除案件数据。删除前请先导出并确认备份。</p>
+        </article>
+        <article>
+          <h2>模型位置</h2>
+          <code id="model-dir">%LOCALAPPDATA%\LaborCaseAgent\models</code>
+          <p>大型模型不随轻量安装器下载；只有校验清单后才应启用。</p>
+        </article>
+        <article>
+          <h2>安全边界</h2>
+          <p>API 只绑定 <code>127.0.0.1:17831</code>。不要通过端口转发、代理或防火墙规则将其公开。</p>
+        </article>
+      </section>
+
+      <section class="actions">
+        <a href="http://127.0.0.1:17831/docs" target="_blank" rel="noreferrer">打开本地 API 文档</a>
+        <a href="http://127.0.0.1:3000">立即打开完整工作台</a>
+      </section>
+
+      <footer>本系统仅提供材料整理、信息提取、计算辅助和文书草拟，不构成正式法律意见。</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

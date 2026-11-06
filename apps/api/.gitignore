@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.coverage
+*.egg-info/
+data/*.db
+data/cases/
+data/system-settings.json
+data/system-settings.json.tmp

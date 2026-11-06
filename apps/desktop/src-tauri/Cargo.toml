@@ -1,0 +1,19 @@
+[package]
+name = "labor-case-agent-desktop"
+version = "0.2.0"
+description = "Local-first desktop shell for Labor Case Agent"
+authors = ["Labor Case Agent contributors"]
+edition = "2021"
+
+[lib]
+name = "labor_case_agent_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+uuid = { version = "1", features = ["v4"] }
